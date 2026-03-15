@@ -1,0 +1,6 @@
+rag_env/
+.env
+__pycache__/
+*.pyc
+.idea/
+vector_database/
