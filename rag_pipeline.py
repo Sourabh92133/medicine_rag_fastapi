@@ -24,7 +24,7 @@ def clean_response(text: str) -> str:
 def initialize_rag():
     global conversation_chain
 
-    os.environ["GROQ_API_KEY"] = "Your-Api-Key"
+    os.environ["GROQ_API_KEY"] = "Your - API - key"
 
     embedding = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
@@ -55,5 +55,16 @@ def initialize_rag():
 
 
 def ask_question(question: str):
+    q = question.lower().strip()
+
+    # Handle greetings
+    if q in ["hi", "hello", "hey"]:
+        return "Hello! How can I help you with medicines today?"
+
+    # Handle empty input
+    if not q:
+        return "Please ask a question."
+    if q in ["thanks" , "thank you"]:
+        return "You're welcome!"
     result = conversation_chain.invoke({"question": question})
     return clean_response(result["answer"])
