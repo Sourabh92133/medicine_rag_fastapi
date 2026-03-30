@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 from rag_pipeline import ask_question, initialize_rag
 
@@ -21,7 +23,7 @@ class Query(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "Medical RAG API running"}
+    return FileResponse("static/index.html")     # seve ui at local host:8000
 
 
 @app.post("/ask")

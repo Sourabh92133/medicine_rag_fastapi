@@ -5,7 +5,9 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_classic.memory import ConversationBufferMemory
 from langchain_classic.chains import ConversationalRetrievalChain
 from langchain_groq import ChatGroq
+from dotenv import load_dotenv
 
+load_dotenv()
 conversation_chain = None
 
 def clean_response(text: str) -> str:
@@ -24,8 +26,9 @@ def clean_response(text: str) -> str:
 def initialize_rag():
     global conversation_chain
 
-    os.environ["GROQ_API_KEY"] = "Your - API - key"
-
+    api_key=os.getenv("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("api key not set in .env file")
     embedding = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
@@ -39,7 +42,8 @@ def initialize_rag():
 
     llm = ChatGroq(
         model_name="openai/gpt-oss-120b",
-        temperature=0.4
+        temperature=0.4,
+        api_key=api_key
     )
 
     memory = ConversationBufferMemory(
