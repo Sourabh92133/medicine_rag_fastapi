@@ -1,9 +1,29 @@
 # MediQuery — AI Medical RAG Assistant
 
-> A production-ready Medical Question Answering system powered by Retrieval-Augmented Generation (RAG). Ask anything about medicines — get instant, accurate answers backed by a real medicine database.
+> A scalable AI-powered Medical Question Answering system built using Retrieval-Augmented Generation (RAG). Ask anything about medicines — get instant, accurate answers backed by a real medicine database.
 
 ---
+## Demo — AI Medical Assistant in Action
 
+![MediQuery Demo](./assets/mediquery.png)
+
+---
+## Example Queries
+
+- "medicines for BP"
+- "medicines for sugar"
+- "medicines for cold"
+
+## Sample Output
+
+**User:** i want to know medicines for cold  
+
+**Response:**
+- Cheston Cold Tablet  
+- Contains Cetirizine, Paracetamol, Phenylephrine  
+- Helps relieve sneezing, fever, congestion
+  
+---
 ## Live Demo
 
 Run instantly via Docker:
@@ -134,4 +154,4 @@ Get your free Groq API key at: [https://console.groq.com](https://console.groq.c
 
 ---
 
-> ⚕️ *For informational purposes only. Always consult a healthcare professional.*
+> *For informational purposes only. Always consult a healthcare professional.*
