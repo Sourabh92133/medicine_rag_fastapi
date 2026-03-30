@@ -84,7 +84,7 @@ mediquery/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/Sourabh92133/medicine_rag_fastapi
+git clone https://github.com/Sourabh92133/mediquery
 cd medicine_rag_fastapi
 ```
 
