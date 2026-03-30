@@ -57,6 +57,7 @@ Then open: [http://localhost:8000](http://localhost:8000)
 | Embeddings | HuggingFace `all-MiniLM-L6-v2` |
 | LLM | Groq (GPT-OSS 120B) |
 | Containerization | Docker |
+| Frontend | HTML + CSS + JavaScript |
 
 ---
 
